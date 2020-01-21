@@ -1,8 +1,7 @@
 import React from "react";
 import Headline from "./headline";
 import { shallow } from "enzyme";
-import { findByTestAttr } from "../../../utils";
-import { checkPropTypes } from "prop-types";
+import { findByTestAttr, checkType } from "../../../utils";
 
 const setUp = (props = {}) => {
   const component = shallow(<Headline {...props} />);
@@ -10,8 +9,8 @@ const setUp = (props = {}) => {
 };
 
 describe("Component Headline", () => {
-  describe("Check type props", () => {
-    const modelProps = {
+  describe("Cek tipe data", () => {
+    const schemaProps = {
       title: "Header",
       desc: "Descripsi",
       people: [
@@ -24,12 +23,7 @@ describe("Component Headline", () => {
       ]
     };
 
-    const propsError = checkPropTypes(
-      Headline.propTypes,
-      modelProps,
-      "props",
-      Headline.name
-    );
+    const propsError = checkType(Headline, schemaProps);
     expect(propsError).toBeUndefined();
   });
 
