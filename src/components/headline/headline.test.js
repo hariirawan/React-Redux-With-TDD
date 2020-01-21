@@ -2,6 +2,7 @@ import React from "react";
 import Headline from "./headline";
 import { shallow } from "enzyme";
 import { findByTestAttr } from "../../../utils";
+import { checkPropTypes } from "prop-types";
 
 const setUp = (props = {}) => {
   const component = shallow(<Headline {...props} />);
@@ -9,6 +10,29 @@ const setUp = (props = {}) => {
 };
 
 describe("Component Headline", () => {
+  describe("Check type props", () => {
+    const modelProps = {
+      title: "Header",
+      desc: "Descripsi",
+      people: [
+        {
+          name: "Hari Irawan",
+          address: "Jerua",
+          email: "hari@gmail.com",
+          onlineStatus: true
+        }
+      ]
+    };
+
+    const propsError = checkPropTypes(
+      Headline.propTypes,
+      modelProps,
+      "props",
+      Headline.name
+    );
+    expect(propsError).toBeUndefined();
+  });
+
   describe("Ketika ada props", () => {
     let wrapper;
     beforeEach(() => {

@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./headline.style.scss";
 
-export default function Headline(props) {
+function Headline(props) {
   const { title, desc } = props;
 
   if (!title) return null;
@@ -12,3 +13,18 @@ export default function Headline(props) {
     </div>
   );
 }
+
+Headline.propTypes = {
+  title: PropTypes.string,
+  desc: PropTypes.string,
+  people: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      address: PropTypes.string,
+      email: PropTypes.string,
+      onlineStatus: PropTypes.bool
+    })
+  )
+};
+
+export default Headline;
