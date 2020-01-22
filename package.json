@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.1",
     "jest": "^24.9.0",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
@@ -17,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.js src/**/*.jsx"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,6 +39,9 @@
   "devDependencies": {
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "0.0.0-b53ea6ca0",
     "react-addons-test-utils": "^15.6.2"
   }
 }
