@@ -1,4 +1,4 @@
-import { types } from "./types";
+import { types } from "../types";
 import Axios from "axios";
 
 export const fetch_posts = () => async dispatch => {

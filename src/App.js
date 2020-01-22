@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Header from "./components/header/header";
 import Headline from "./components/headline/headline";
-import { fetch_posts } from "./actions/index";
+import { fetch_posts } from "./actions/posts";
 import ListItem from "./components/list-item/list-item";
 
 const people = [
