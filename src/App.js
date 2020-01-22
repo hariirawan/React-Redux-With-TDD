@@ -20,7 +20,7 @@ function App(props) {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App" data-test="app">
       <Header />
       <section className="main">
         <Headline
